@@ -55,12 +55,17 @@ v.setCoordinates(system='Galactic')
 v.setCenter(target.ra,target.dec)
 v.setSize(2*u.deg)
 
+# Add a custom annotation
+v.addMarker(target.ra+0.235*u.deg, 
+	target.dec-0.184*u.deg, marker = '+', label='Here there be dragons')
+
 # Show a color bar.
 v.showColorbar(title='Brightness (K)')
 
 # Define a Scale Bar and set a position within the plot window (1 = upper left,
 # 2 = upper middle, 3 = upper right, etc.)
 v.showScalebar(length=2*u.AU,title='2 AU',pos=9)
+
 
 # Pick plotting parameters
 v.setFont(family='Times',size=14)
